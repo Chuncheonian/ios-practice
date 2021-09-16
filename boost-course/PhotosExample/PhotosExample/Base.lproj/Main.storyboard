@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PhotosExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="58K-oT-ASv">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hi4-Dv-cOe">
@@ -43,9 +43,20 @@
                             <constraint firstItem="58K-oT-ASv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MOf-D8-UXr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wRE-IP-eQx"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="0Ll-hE-2dU"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Title" id="2Ot-Lk-N1J">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="1bi-PZ-M62">
+                            <connections>
+                                <action selector="touchUpRefreshButton:" destination="BYZ-38-t0r" id="Jh8-hJ-vJR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="58K-oT-ASv" id="Rl8-QO-nJa"/>
+                        <outlet property="touchUpRefreshButton" destination="1bi-PZ-M62" id="U45-vd-10n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -61,10 +72,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="QkV-pQ-cah">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dou-Mh-cVF">
-                                        <rect key="frame" x="0.0" y="0.0" width="423" height="774"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="423" height="725"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -88,7 +99,11 @@
                             <constraint firstItem="h7p-2D-vxZ" firstAttribute="trailing" secondItem="QkV-pQ-cah" secondAttribute="trailing" id="jrk-Hb-lmC"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="refresh" id="VCA-aP-E7u"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="xjX-u8-D8p"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="Dou-Mh-cVF" id="DIm-nF-Qmi"/>
                         <outlet property="scrollView" destination="QkV-pQ-cah" id="6tJ-Im-agn"/>
@@ -101,13 +116,17 @@
         <!--Navigation Controller-->
         <scene sceneID="aUk-7K-Lrv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a1A-JL-6sQ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="a1A-JL-6sQ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A64-Zg-V1y">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XwP-q1-Lij">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="e2s-Bg-Jyf"/>
                     </connections>

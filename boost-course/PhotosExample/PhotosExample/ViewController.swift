@@ -56,6 +56,10 @@ class ViewController: UIViewController {
         PHPhotoLibrary.shared().register(self)
     }
     
+    @IBAction func touchUpRefreshButton(_ sender: UIBarButtonItem) {
+        self.tableView.reloadSections(IndexSet(0...0), with: .automatic)
+    }
+    
     func requestCollection() {
         
         let cameraRoll: PHFetchResult<PHAssetCollection> =
