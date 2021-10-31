@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "PagingKit",
+        "repositoryURL": "https://github.com/kazuhiro4949/PagingKit",
+        "state": {
+          "branch": null,
+          "revision": "4c611ecf9c0365a36447ba95763700a902090829",
+          "version": "1.18.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
